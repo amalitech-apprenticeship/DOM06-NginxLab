@@ -1,5 +1,6 @@
 import http from "http";
 import fetchItems from "./fetch_items.js";
+import os from "os";
 
 const port = process.env.PORT || 5000;
 
