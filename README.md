@@ -13,3 +13,19 @@ This lab focused on setting up and configuring NGINX as a reverse proxy to route
 
 ### Outcome
 The application is now served through NGINX, which acts as a reverse proxy and centralizes request handling, routing, and access to the backend service.
+
+
+### Update
+
+Here are the results of running this on an EC2
+
+![alt text](image.png)
+
+You can see the reverse proxy working as a load balancer
+![alt text](image-1.png)
+
+Here I have all three repicas
+![alt text](image-2.png)
+
+Here is the call to the server still working even though I killed one of the containers
+![alt text](image-3.png)
