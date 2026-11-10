@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS items (
     price DECIMAL(10, 2) NOT NULL
 );
 
+IF NOT EXISTS (SELECT 1 FROM items) THEN
 INSERT INTO items (name, description, price) VALUES
 ('Dog Collar', 'A comfortable collar for your dog', 10.99),
 ('Dog Leash', 'A durable leash for walking your dog', 15.99),

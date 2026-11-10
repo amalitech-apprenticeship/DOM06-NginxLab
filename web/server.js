@@ -1,4 +1,5 @@
 import http from "http";
+import fetchItems from "./fetch_items.js";
 
 const port = process.env.PORT || 5000;
 
@@ -14,10 +15,9 @@ const server = http.createServer((req, res) => {
     res.end("OK");
     return;
   }
-  const items = [];
 
   if (req.url === "/items") {
-    items.push(...fetchItems())
+    fetchItems()
       .then((items) => {
         res.writeHead(200, { "Content-Type": "application/json" });
         res.end(JSON.stringify(items));
@@ -27,6 +27,7 @@ const server = http.createServer((req, res) => {
         res.writeHead(500, { "Content-Type": "text/plain" });
         res.end("Internal Server Error");
       });
+    return;
   }
 
   res.writeHead(404, { "Content-Type": "text/plain" });
